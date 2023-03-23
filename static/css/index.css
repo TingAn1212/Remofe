@@ -1,0 +1,14 @@
+@font-face {
+    font-family: normal;
+    src: url("../assets/Cuprum-Medium.ttf");
+}
+
+body{
+    background-color: #A7C6ED;
+    font-family: 'normal';
+}
+/* Azure: #007FFF (this is the base color you mentioned)
+Pale blue: #A7C6ED (a light, airy blue that pairs well with azure)
+Light gray: #D9D9D9 (a neutral, light gray that works well for backgrounds)
+Dark gray: #333333 (a darker gray that works well for text or accents)
+Coral: #FF7F50 (a warm, complementary color to add some pop to your design) */
