@@ -41,20 +41,52 @@ Coral: #FF7F50 (a warm, complementary color to add some pop to your design) */
     padding-right: 30vw;
 }
 
+.window{
+    width: 90%;
+    border: 3px solid rgb(190, 190, 190);
+    background-color: aliceblue;
+    height: fit-content;
+    overflow-y: auto;
+    min-height: 200px;
+    max-height: 60vh;
+    margin-bottom: 1vh;
+}
+
 .button-container{
     display: flex;
-    height: 10vh;
+    height: fit-content;
     width: 90%;
+    margin-bottom: -10vh;
+}
+
+.button-group{
+    width: 49%;
+    cursor: pointer;
+}
+
+.button-group:hover > .shadow{
+    transform: scale(1.05,1.1);
 }
 
 .button{
+    position: relative;
     display: flex;
-    height: inherit;
-    width: 49%;
+    height: 10vh;
+    width: 100%;
     background-color: #007FFF;
     border-radius: 10px;
     color: black;
     align-items: center;
+    font-size: calc(1vw + 1em);
+    z-index: 1;
+}
+
+.shadow{
+    position: relative;
+    top: -10vh;
+    z-index: 0;
+    background-color: aliceblue;
+    transition: 0.5s;
 }
 
 .title-main{
