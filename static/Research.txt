@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/56877053/is-there-a-tool-to-automatically-convert-string-formatting-types-to-f-strings
