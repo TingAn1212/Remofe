@@ -50,6 +50,7 @@ Coral: #FF7F50 (a warm, complementary color to add some pop to your design) */
     min-height: 200px;
     max-height: 60vh;
     margin-bottom: 1vh;
+    white-space: pre-wrap;
 }
 
 .button-container{
