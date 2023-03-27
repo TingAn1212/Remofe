@@ -1,0 +1,2 @@
+Remofe is a tool to convert all f-string into string.format() in a python file
+This is to help integrate python code implemented in newer version into a older system such as a graphing calculator without the need to edit the code manually.

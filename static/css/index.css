@@ -12,3 +12,67 @@ Pale blue: #A7C6ED (a light, airy blue that pairs well with azure)
 Light gray: #D9D9D9 (a neutral, light gray that works well for backgrounds)
 Dark gray: #333333 (a darker gray that works well for text or accents)
 Coral: #FF7F50 (a warm, complementary color to add some pop to your design) */
+
+@media only screen and (max-width: 700px){
+    .main{
+        padding-left: 5vw !important;
+        padding-right: 5vw !important;
+    }
+}
+
+.center-h{
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divider{
+    background-color: black;
+    border-radius: 2px;
+    height: 2px;
+    width: 100%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.main{
+    padding-left: 30vw;
+    padding-right: 30vw;
+}
+
+.button-container{
+    display: flex;
+    height: 10vh;
+    width: 90%;
+}
+
+.button{
+    display: flex;
+    height: inherit;
+    width: 49%;
+    background-color: #007FFF;
+    border-radius: 10px;
+    color: black;
+    align-items: center;
+}
+
+.title-main{
+    font-size: calc(4vw + 3em);
+}
+
+.text-medium{
+    font-size: calc(1vw + 1em);
+    margin-left: 2%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.text-box{
+    width: 92%;
+    height: fit-content;
+    margin-left: 2%;
+    border: 2px dashed #007FFF;
+    border-radius: 5px;
+    padding: 2%;
+}
