@@ -20,6 +20,10 @@ Coral: #FF7F50 (a warm, complementary color to add some pop to your design) */
     }
 }
 
+a{
+    color: #007FFF;
+}
+
 .center-h{
     display: block;
     width: fit-content;
