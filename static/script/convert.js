@@ -93,49 +93,48 @@ function clean(items){
 }
 
 function convertBlock(line){
-    var names = [];
-    var result = [];
     var layer = 0;
-    var count = 0
-    var temp = "";
-    var tempNormal = "";
+    var names = [];
+    var tempName = "";
+    var result = "";
+    var grabbing = false;
     for (var letter of line){
         if (letter == "{"){
-            layer += 1;
-        }
-        if (letter == "}"){
-            layer += -1;
             if (layer < 0){
                 layer = 0;
             }
-            if (layer == 0){
-                names.push(temp);
-                result.push("{}");
-                temp = "";
+            layer++;
+            if (layer == 1){
+                grabbing = true;
+                result += "{";
+            }else{
+                if (layer > 1){
+                    tempName += "{";
+                }
             }
-        }
-        if (layer >= 1){
-            temp += letter;
-        }
-        if (layer == 0 && letter != "}"){
-            tempNormal += letter;
-        }
-        if (layer == 1 && tempNormal.length > 0){
-            result.push(tempNormal);
-            count++;
-            tempNormal = "";
+        }else if (letter == "}"){
+            layer--;
+            if (layer == 0){
+                grabbing = false;
+                result += "}";
+                names.push(tempName);
+                tempName = "";
+            }else{
+                if (layer > 0){
+                    tempName += "}";
+                }
+            }
+        }else if(!grabbing){
+            result += letter;
+        }else{
+            tempName += letter;
         }
     }
     //names contains all variables
     var final = "\"";
-    if (count == 0){
-        final += line;
-    }
-    for (var item of result){
-        final += item;
-    }
+    final += result;
     final += "\".format(";
-    names = clean(names);
+    // names = clean(names);
     for (var i=0;i<names.length;i++){
         final += names[i];
         if (i != names.length-1){

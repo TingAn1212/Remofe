@@ -24,7 +24,7 @@
         <h1 class="center-h title-main">Remofe</h1>
         <div class="divider center-h"></div>
         <!-- Main -->
-        <div class="window center-h" id="window">Please upload python file<br>
+        <div class="window center-h" id="window">***Please upload python file<br>
         </div>
         <div class="button-container center-h">
             <div class="button-group" style="margin-right: 2%;">
@@ -32,7 +32,7 @@
                 <div class="button shadow"></div>
             </div>
             <div class="button-group">
-                <div class="button"><span class="center-h">Download</span></div>
+                <div id="file-output" class="button"><span class="center-h">Download</span></div>
                 <div class="button shadow"></div>
             </div>
         </div>
@@ -51,6 +51,11 @@
     </div>
     <script>
         const fileUpload = document.querySelector('#file-input');
+        const fileDownload = document.querySelector('#file-output');
+        
+        fileDownload.addEventListener("click", () => {
+            download();
+        });
 
         fileUpload.addEventListener('drop', (event) => {
             event.preventDefault();
@@ -78,7 +83,7 @@
                 // fileContents is a string with line break as \r\n
                 // Do something with the file contents...
                 const splitFileContents = fileContents.split("\r\n");
-                startOperation(splitFileContents);
+                startOperation(splitFileContents,file.name);
             };
         }
     </script>
