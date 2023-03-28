@@ -184,11 +184,9 @@ function convertLine(line){
         }
         previous = letter;
     }
-    result = result.replaceAll("f'",";");
-    result = result.replaceAll("f\"",";");
-    result = result.replaceAll("F'",";");
-    result = result.replaceAll("F\"",";");
-    result = result.split(";");
+    var regex = /[fF]['"]/g;
+    result = result.replace(regex, '分割');
+    result = result.split("分割");
     var final = "";
     for (var i=0;i<result.length-1;i++){
         final += result[i];
