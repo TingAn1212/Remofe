@@ -46,11 +46,14 @@ function grabLines(line){
                         started = false;
                         if (grabbing){
                             grabbing = false;
-                            result.push(tempo);
+                            result.push(tempo.slice(1));
                             tempo = "";
                         }
                     }
                 }
+            }
+            if (grabbing){
+                tempo += letter;
             }
         }else{
             if (grabbing){
@@ -62,27 +65,27 @@ function grabLines(line){
     return result;
 }
 
-function grabVariables(line){
-    var names = [];
-    var layer = 0;
-    var temp = "";
-    for (var letter of line){
-        if (letter == "{"){
-            layer += 1;
-        }
-        if (letter == "}"){
-            layer += -1;
-            if (layer == 0){
-                names.push(temp);
-                temp = "";
-            }
-        }
-        if (layer == 1 && letter != "{" && letter != "}"){
-            temp += letter;
-        }
-    }
-    return names;
-}
+// function grabVariables(line){
+//     var names = [];
+//     var layer = 0;
+//     var temp = "";
+//     for (var letter of line){
+//         if (letter == "{"){
+//             layer += 1;
+//         }
+//         if (letter == "}"){
+//             layer += -1;
+//             if (layer == 0){
+//                 names.push(temp);
+//                 temp = "";
+//             }
+//         }
+//         if (layer == 1 && letter != "{" && letter != "}"){
+//             temp += letter;
+//         }
+//     }
+//     return names;
+// }
 
 function clean(items){
     var result = [];
@@ -194,3 +197,5 @@ function convertLine(line){
     }
     return final;
 }
+
+console.log(convertLine("    one_dict = f'-{\"two\"}' + F\"abc{123}\""))
