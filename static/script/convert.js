@@ -198,4 +198,5 @@ function convertLine(line){
     return final;
 }
 
-console.log(convertLine("    one_dict = f'-{\"two\"}' + F\"abc{123}\""))
+//To be fixed:
+//After f' is detected, cannot directly remove {}, need to go into f"{}" sepcifically 
